@@ -19,9 +19,12 @@
     "web-vitals": "^1.0.1"
   },
   "devDependencies": {
-    "eslint": "^7.28.0",
+    "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.23.4"
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-react": "^7.24.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -46,12 +49,16 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "cross-env": "^7.0.3",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-react": "^7.24.0"
-  }
+  "description": "> This project is part of Microverse React Module with the aim of building a Calculator in React  ![](https://img.shields.io/badge/Microverse-blueviolet)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RailonA/React-Project-Calculator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RailonA/React-Project-Calculator/issues"
+  },
+  "homepage": "https://github.com/RailonA/React-Project-Calculator#readme"
 }
