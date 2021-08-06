@@ -7,5 +7,5 @@
       "csstree/validator": true
       
     },
-    "ignoreFiles": ["build/**", "dist/**", "**/reset*.css", "**/bootstrap*.css", "*/main.scss", "coverage/lcov-report/prettify.css", "coverage/lcov-report/base.css"]
+    "ignoreFiles": ["build/**", "public/**", "**/reset*.css", "**/bootstrap*.css", "*/main.scss", "coverage/lcov-report/prettify.css", "coverage/lcov-report/base.css"]
   }
