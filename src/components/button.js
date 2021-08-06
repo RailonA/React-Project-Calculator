@@ -1,8 +1,7 @@
-/* eslint-disable func-style */
 import PropTypes from "prop-types";
 import React from "react";
 
-function Button ({name}) {
+export default function Button ({name}) {
 
     return (
         <div>
@@ -15,6 +14,3 @@ function Button ({name}) {
 Button.propTypes = {
     "name": PropTypes.string.isRequired
 };
-
-export default Button;
-/* eslint-enable func-style */

@@ -1,10 +1,8 @@
 /* eslint-disable max-lines-per-function */
-/* eslint-disable func-style */
-
 import Button from "./button";
 import React from "react";
 
-function ButtonPanel () {
+export default function ButtonPanel () {
 
     return (
         <div>
@@ -74,6 +72,4 @@ function ButtonPanel () {
 
 }
 
-export default ButtonPanel;
 /* eslint-enable max-lines-per-function */
-/* eslint-enable func-style */
