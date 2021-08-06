@@ -1,11 +1,10 @@
 {
-    "extends": ["stylelint-config-standard"],
-    "plugins": ["stylelint-scss", "stylelint-csstree-validator"],
-    "rules": {
-      "at-rule-no-unknown": null,
-      "scss/at-rule-no-unknown": true,
-      "csstree/validator": true
-      
-    },
-    "ignoreFiles": ["build/**", "public/**", "**/reset*.css", "**/bootstrap*.css", "*/main.scss", "coverage/lcov-report/prettify.css", "coverage/lcov-report/base.css"]
-  }
+  "extends": ["stylelint-config-standard"],
+  "plugins": ["stylelint-scss", "stylelint-csstree-validator"],
+  "rules": {
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true,
+    "csstree/validator": true
+  },
+  "ignoreFiles": ["build/**", "dist/**", "**/reset*.css", "**/bootstrap*.css", "**/*.js", "**/*.jsx"]
+}

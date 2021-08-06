@@ -1,12 +1,20 @@
-import React from 'react';
-import ButtonPanel from './buttonPanel';
-import Display from './display';
+/* eslint-disable func-style */
+import ButtonPanel from "./buttonPanel";
+import Display from "./display";
+import React from "react";
 
-const App = () => (
-  <div>
-    <Display />
-    <ButtonPanel />
-  </div>
-);
+function App () {
+
+    return (
+        <div>
+
+            <Display />
+
+            <ButtonPanel />
+
+        </div>);
+
+}
 
 export default App;
+/* eslint-enable func-style */

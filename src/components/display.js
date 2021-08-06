@@ -1,18 +1,29 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+/* eslint-disable func-style */
+/* eslint-disable no-trailing-spaces */
 
-const Display = ({ result }) => (
-  <div>
-    {result}
-  </div>
-);
+import PropTypes from "prop-types";
+import React from "react";
+
+function Display ({result}) {
+
+    return ( 
+
+        <div>
+            {result}
+        </div>
+
+    );
+
+}
 
 Display.propTypes = {
-  result: PropTypes.string,
+    "result": PropTypes.string
 };
 
 Display.defaultProps = {
-  result: '0',
+    "result": "0"
 };
 
 export default Display;
+/* eslint-enable func-style */
+/* eslint-disable no-trailing-spaces */
