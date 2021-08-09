@@ -3,18 +3,41 @@ import Display from "./display";
 import React from "react";
 import calculate from "../logic/calculate";
 
-export default function App () {
+class App extends React.Component {
+    construction(props) {
+        super(props) {
+            this.state = {
+                total: '0',
+                next: '',
+                operation: ''
+            };
 
-    calculate({"next": 0,
-        "operation": "+",
-        "total": 0});
-    return (
-        <>
+            this.handleClick = this.handleClick.bind(this);
+            this.resultHandler = this.resultHandler.bind(this);
+        }
 
-            <Display />
+        handleClick = (buttonName) => {
+            const result = calculate(this.state, buttonName);
+            this.setState(result);
+        };
 
-            <ButtonPanel />
+        resultHandler = (total, next) => {
+            if (next) {
+                return next;
+            }
+            return total;
+        };
 
-        </>);
+        this.render() {
+            const {total, next} = this.state;
+            return (
+                <div className="main-box">
+                    <Display result={this.resultHandler(total, next)}/>
+                    <ButtonPanel clickHandler={this.handleClick} />
+                </div>
+            )
+        }
+    }
 
 }
+export default App;

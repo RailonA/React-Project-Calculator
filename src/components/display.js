@@ -7,7 +7,7 @@ export default function Display ({result}) {
 
     return (
 
-        <div>
+        <div className="result text">
             {result}
         </div>
 

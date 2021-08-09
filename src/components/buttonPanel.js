@@ -1,75 +1,116 @@
 /* eslint-disable max-lines-per-function */
 import Button from "./button";
+import PropTypes from "prop-types";
 import React from "react";
 
-export default function ButtonPanel () {
+export default function ButtonPanel (props) {
+
+    const handleClick = (name) => {
+
+            props.clickHandler(name);
+
+        },
+
+
+        symbols = [
+            "AC",
+            "+/-",
+            "%",
+            "/"
+        ],
+        firstGroup = [
+            "7",
+            "8",
+            "9",
+            "X"
+        ],
+        secondGroup = [
+            "4",
+            "5",
+            "6",
+            "−"
+        ],
+        thirdGroup = [
+            "1",
+            "2",
+            "3",
+            "+"
+        ];
+
 
     return (
         <div>
-
             <div>
-
-                <Button name="AC" />
-
-                <Button name="+/-" />
-
-                <Button name="%" />
-
-                <Button name="/" />
-
+                {
+                    symbols.map((btn) => <Button
+                        clickHandler={handleClick}
+                        key={btn}
+                        name={btn}
+                    />)
+                }
             </div>
 
             <div>
 
-
-                <Button name="7" />
-
-                <Button name="8" />
-
-                <Button name="9" />
-
-                <Button name="X" />
-
+                (
+                {
+                    firstGroup.map((btn) => <Button
+                    key={btn}
+                    name={btn}
+                    clickHandler={handleClick}
+                    />)
+                }
+                )
             </div>
 
             <div>
-
-                <Button name="4" />
-
-                <Button name="5" />
-
-                <Button name="6" />
-
-                <Button name="-" />
-
+                {
+                    secondGroup.map((btn) => <Button
+                        key={btn}
+                        name={btn}
+                        clickHandler={handleClick}
+                    />)
+                }
             </div>
 
             <div>
-
-                <Button name="1" />
-
-                <Button name="2" />
-
-                <Button name="3" />
-
-                <Button name="+" />
-
+                {
+                    thirdGroup.map((btn) => (<Button
+                        key={btn}
+                        name={btn}
+                        clickHandler={handleClick}
+                    />)
+                }
             </div>
 
             <div>
+                <Button
+                    clickHandler={handleClick}
+                    name="0"
+                />
 
-                <Button name="0" />
+                <Button
+                    clickHandler={handleClick}
+                    name="."
+                />
 
-                <Button name="." />
-
-                <Button name="=" />
-
+                <Button
+                    clickHandler={handleClick}
+                    name="="
+                />
             </div>
-
         </div>
-
     );
 
 }
+
+
+ButtonPanel.propTypes = {
+    "clickHandler": PropTypes.func
+};
+
+ButtonPanel.defaultProps = {
+    "clickHandler": 0
+};
 
 /* eslint-enable max-lines-per-function */
