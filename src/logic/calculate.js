@@ -1,7 +1,5 @@
-/* eslint-disable init-declarations */
 /* eslint-disable sort-vars */
 /* eslint-disable one-var */
-
 import operate from "./operate";
 
 const operations = [
@@ -19,11 +17,9 @@ const operations = [
     calculate = (buttonName, data) => {
 
         const {next, operation, total} = data;
-        let totalGen;
-
         if (operations.includes(buttonName)) {
 
-            totalGen = operate(
+            const totalGen = operate(
                 buttonName,
                 next,
                 total
@@ -43,6 +39,5 @@ const operations = [
     };
 
 export default calculate;
-/* eslint-enable init-declarations */
 /* eslint-enable sort-vars */
 /* eslint-enable one-var */
