@@ -1,16 +1,48 @@
-import operate from './operate'
+/* eslint-disable init-declarations */
+/* eslint-disable sort-vars */
+/* eslint-disable one-var */
 
-const operations = ['+', '−', 'x', '÷', '%', 'AC', '=', '+/-', '.'];
+import operate from "./operate";
 
-const calculate = (data, buttonName) => {
-    const { total, operations, next } = data;
-    let totalGen;
-    if (operations.include(buttonName)) {
-        totalGen = operate(total, next, buttonName);
-        return {totalGen, next, buttonName};
-    }
-    const newNext = buttonName;
-    return {total, newNext, operation};
-}
+const operations = [
+        "+",
+        "−",
+        "×",
+        "÷",
+        "%",
+        "AC",
+        "=",
+        "+/-",
+        "."
+    ],
+
+    calculate = (buttonName, data) => {
+
+        const {next, operation, total} = data;
+        let totalGen;
+
+        if (operations.includes(buttonName)) {
+
+            totalGen = operate(
+                buttonName,
+                next,
+                total
+            );
+
+            return {buttonName,
+                next,
+                totalGen};
+
+        }
+
+        const newNext = buttonName;
+        return {newNext,
+            operation,
+            total};
+
+    };
 
 export default calculate;
+/* eslint-enable init-declarations */
+/* eslint-enable sort-vars */
+/* eslint-enable one-var */

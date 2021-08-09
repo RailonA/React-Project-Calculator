@@ -1,50 +1,59 @@
-import Big from 'big.js';
+/* eslint-disable no-magic-numbers */
+/* eslint-disable no-ternary */
+
+import Big from "big.js";
 
 const operate = (firstnumber, secondNumber, operation) => {
- 
-const numberOne = Big(firstnumber);
-const numberTwo = Big(secondNumber);
-let result = 0;
 
-switch (operation) {
-    case '+':
-    result = numberOne.plus(numberTwo)
-    break;
+    const numberOne = new Big(firstnumber),
+        numberTwo = new Big(secondNumber);
+    let result = 0;
 
-    case '-':
-    result = numberOne.minus(numberTwo)
-    break;
+    switch (operation) {
 
-    case 'x':
-    result = numberOne.times(numberTwo)
-    break;
-    
-    case '%':
-    result = numberOne.mod(numberTwo)
-    break;
+    case "+":
+        result = numberOne.plus(numberTwo);
+        break;
 
-    case '/':
-    result = numberOne.div(numberTwo)
-    break;
-        
-    case '+/-':
-    result = secondNumber ? numberTwo * -1 : numberOne * -1;
-    break;
-    
-    case 'AC':
-      result = 0;
-      break;
+    case "-":
+        result = numberOne.minus(numberTwo);
+        break;
 
-    case '.':
-      result = 0.0;
-      break;
+    case "x":
+        result = numberOne.times(numberTwo);
+        break;
+
+    case "%":
+        result = numberOne.mod(numberTwo);
+        break;
+
+    case "/":
+        result = numberOne.div(numberTwo);
+        break;
+
+    case "+/-":
+        result = secondNumber
+            ? numberTwo * -1
+            : numberOne * -1;
+        break;
+
+    case "AC":
+        result = 0;
+        break;
+
+    case ".":
+        result = 0.0;
+        break;
 
     default:
-      break;
-}
+        break;
 
-return result;
+    }
 
-}
+    return result;
+
+};
 
 export default operate;
+/* eslint-disable no-ternary */
+/* eslint-disable no-ternary */
