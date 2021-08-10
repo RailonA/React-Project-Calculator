@@ -1,7 +1,8 @@
+/* eslint-disable sort-vars */
 import PropTypes from "prop-types";
 import React from "react";
 
-export default function Button ({name, color, clickHandler, width}) {
+export default function Button ({name, color, clickHandler, wide}) {
 
     const handleClick = (name) => {
 
@@ -9,9 +10,9 @@ export default function Button ({name, color, clickHandler, width}) {
 
         },
 
-        colorBtn = (widthBool) => {
+        colorBtn = (wideBool) => {
 
-            if (widthBool) {
+            if (wideBool) {
 
                 return `${color} button-zero`;
 
@@ -22,25 +23,29 @@ export default function Button ({name, color, clickHandler, width}) {
 
     return (
         <div
-            className={colorBtn(width)}
-            onClick={() => handleClick(name)}
+            className={colorBtn(wide)}
+            onClick={handleClick(name)}
+            onKeyDown={handleClick(name)}
+            role="button"
+            tabIndex={0}
         >
             <span className="text">
                 {name}
             </span>
-        </div>
-    );
+        </div>);
 
 }
+
 
 Button.propTypes = {
     "clickHandler": PropTypes.func.isRequired,
     "color": PropTypes.string,
     "name": PropTypes.string.isRequired,
-    "width": PropTypes.bool
+    "wide": PropTypes.bool
 };
 
 Button.defaultProps = {
     "color": "button btn-primary",
-    "width": false
+    "wide": false
 };
+/* eslint-enable sort-vars */

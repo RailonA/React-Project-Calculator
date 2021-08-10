@@ -1,5 +1,4 @@
 
-
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -7,8 +6,10 @@ export default function Display ({result}) {
 
     return (
 
-        <div className="result text">
+        <div className="element text">
+
             {result}
+
         </div>
 
     );

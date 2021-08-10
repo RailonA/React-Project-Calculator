@@ -50,7 +50,7 @@ const operate = (firstnumber, secondNumber, operation) => {
 
     }
 
-    return result.toString();
+    return result;
 
 };
 
