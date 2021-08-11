@@ -5,14 +5,9 @@ import ReactDOM from "react-dom";
 import "./styles/index.scss";
 import App from "./components/app";
 
-function Calculator () {
-
-    return <App />;
-
-}
 
 ReactDOM.render(
-    <Calculator />,
+    <App />,
     document.getElementById("root")
 );
 /* eslint-enable func-style */
