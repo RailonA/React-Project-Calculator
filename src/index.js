@@ -5,9 +5,10 @@ import ReactDOM from "react-dom";
 import "./styles/index.scss";
 import App from "./components/app";
 
-
 ReactDOM.render(
-    <App />,
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>,
     document.getElementById("root")
 );
 /* eslint-enable func-style */

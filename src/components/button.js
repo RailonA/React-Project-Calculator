@@ -1,53 +1,22 @@
-/* eslint-disable sort-vars */
 import PropTypes from "prop-types";
 import React from "react";
 
-export default function Button ({
-    name, color, clickHandler, wide
-}) {
+export default function Button ({btnName, clickHandler}) {
 
-    const handleClick = (name) => {
-
-            clickHandler(name);
-
-        },
-
-        colorBtn = (wideBool) => {
-
-            if (wideBool) {
-
-                return `${color} button-zero`;
-
-            }
-            return `${color}`;
-
-        };
+    const handleClick = (btnName) => clickHandler(btnName);
 
     return (
-        <div
-            className={colorBtn(wide)}
-            onClick={handleClick(name)}
-            onKeyDown={handleClick(name)}
-            role="button"
-            tabIndex={0}
+        <button
+            onClick={handleClick(btnName)}
+            type="button"
         >
-            <span className="text">
-                {name}
-            </span>
-        </div>);
+            {btnName}
+        </button>
+    );
 
 }
 
-
 Button.propTypes = {
-    "clickHandler": PropTypes.func.isRequired,
-    "color": PropTypes.string,
-    "name": PropTypes.string.isRequired,
-    "wide": PropTypes.bool
+    "btnName": PropTypes.string.isRequired,
+    "clickHandler": PropTypes.func.isRequired
 };
-
-Button.defaultProps = {
-    "color": "button btn-primary",
-    "wide": false
-};
-/* eslint-enable sort-vars */

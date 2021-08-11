@@ -1,73 +1,107 @@
 /* eslint-disable no-magic-numbers */
-/* eslint-disable no-ternary */
 /* eslint-disable max-lines-per-function */
 /* eslint-disable complexity */
-/* eslint-disable no-undef */
 /* eslint-disable max-statements */
-/* eslint-disable sort-vars */
-/* eslint-disable no-unused-expressions */
-/* eslint-disable max-statements-per-line */
 
-const calculate = (data, buttonName) => {
+import operate from "./operate";
+
+const calculate = (btnName, data = {}) => {
 
     let {total, next, operation} = data;
-    const operands = [
+    const numbers = Array(10).
+            fill(null).
+            map((num, int) => int.toString()),
+        operators = [
             "+",
+            "-",
             "X",
-            "−",
-            "÷"
-        ],
-        nums = [
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9"
-        ];
-    if (buttonName === "AC") {
-
-        [
-            total,
-            next,
-            operation
-        ] = [
-            "0",
-            null,
-            null
+            "÷",
+            "%"
         ];
 
-    }
-    if (buttonName === "+/-") {
+    if (btnName === "+/-") {
 
-        if (total) {
-
-            total *= -1;
-
-        }
-        if (next) {
-
-            next *= -1;
-
-        }
-        operation = null;
+        return {
+            ...data,
+            "next": next * -1,
+            "total": total * -1
+        };
 
     }
-    if (buttonName === "%") {
 
-        if (total) {
+    if (btnName === "AC") {
 
-            next = (0.01 * total).toString();
+        return {
+            ...data,
+            "next": null,
+            "operation": null,
+            "total": null
+        };
+
+    }
+
+    if (btnName === ".") {
+
+        if (!next.includes(".")) {
+
+            next += btnName;
 
         }
 
     }
-    if (buttonName === "=") {
 
+    if (numbers.includes(btnName)) {
+
+        while (next === null) {
+
+            next = "";
+
+        }
+        next += btnName;
+
+    }
+
+    if (operators.includes(btnName)) {
+
+        while (next !== null && operation !== null) {
+
+            total = operate(
+                total,
+                next,
+                operation
+            );
+            operation = btnName;
+            next = null;
+            operation = null;
+
+        }
+        while (next !== null) {
+
+            total = next;
+            next = null;
+
+        }
+        if (next === null || operation === null) {
+
+            operation = btnName;
+
+        }
+
+    }
+
+    if (btnName === "=") {
+
+        if (total && !next) {
+
+            const result = total;
+            total = result;
+
+        }
+        if (!total && !next) {
+
+            total = 0;
+
+        }
         if (total && next && operation) {
 
             total = operate(
@@ -78,69 +112,18 @@ const calculate = (data, buttonName) => {
             next = null;
             operation = null;
 
-        }disable;
-
-    }
-    if (operands.includes(buttonName)) {
-
-        if (total) {
-
-            operation = buttonName;
-
         }
 
-    } else if (operation && nums.includes(buttonName)) {
-
-        next = next
-            ? next + buttonName
-            : buttonName;
-
-    } else if (total && nums.includes(buttonName)) {
-
-        if (total === "0") {
-
-            total = buttonName;
-
-        } else {
-
-            total = buttonName + total;
-
-        }
-
-    } else if (nums.includes(buttonName)) {
-
-        total = total
-            ? total + buttonName
-            : buttonName;
-
-    } else if (!next && !operation && buttonName === ".") {
-
-        total = total.includes(buttonName)
-            ? total
-            : total + buttonName;
-
-    } else if (total && operation && buttonName === ".") {
-
-        next = next.includes(buttonName)
-            ? next
-            : next + buttonName;
-
     }
-    return {
-        next,
+
+    return {next,
         operation,
-        total
-    };
+        total};
 
 };
 
 export default calculate;
 /* eslint-enable no-magic-numbers */
-/* eslint-enable no-ternary */
 /* eslint-enable max-lines-per-function */
 /* eslint-enable complexity */
-/* eslint-enable no-undef */
 /* eslint-enable max-statements */
-/* eslint-enable sort-vars */
-/* eslint-enable no-unused-expressions */
-/* eslint-enable max-statements-per-line */

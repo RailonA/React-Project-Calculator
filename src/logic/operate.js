@@ -1,59 +1,50 @@
-/* eslint-disable no-magic-numbers */
 /* eslint-disable no-ternary */
+/* eslint-disable no-magic-numbers */
+/* eslint-disable max-len */
 
 import Big from "big.js";
 
-const operate = (firstnumber, secondNumber, operation) => {
+const operate = (numberOne, numberTwo, operation) => {
 
-    const numberOne = new Big(firstnumber),
-        numberTwo = new Big(secondNumber);
-    let result = 0;
+    const bigNumberOne = numberOne
+            ? new Big(numberOne)
+            : null,
+        bigNumberTwo = numberTwo
+            ? new Big(numberTwo)
+            : null;
 
     switch (operation) {
 
     case "+":
-        result = numberOne.plus(numberTwo);
-        break;
-
+        return bigNumberOne.plus(bigNumberTwo).toString();
     case "-":
-        result = numberOne.minus(numberTwo);
-        break;
+        return bigNumberOne.minus(bigNumberTwo).toString();
+    case "X":
+        return bigNumberOne.times(bigNumberTwo).toString();
+    case "÷":
+        try {
 
-    case "x":
-        result = numberOne.times(numberTwo);
-        break;
+            bigNumberOne.div(bigNumberTwo);
+            return (
+                Math.round(bigNumberOne.div(bigNumberTwo) * 1000000.0) / 1000000.0
+            ).toString();
 
+        } catch (err) {
+
+            return "Error, division by 0";
+
+        }
     case "%":
-        result = numberOne.mod(numberTwo);
-        break;
-
-    case "/":
-        result = numberOne.div(numberTwo);
-        break;
-
-    case "+/-":
-        result = secondNumber
-            ? numberTwo * -1
-            : numberOne * -1;
-        break;
-
-    case "AC":
-        result = 0;
-        break;
-
-    case ".":
-        result = 0.0;
-        break;
-
+        return `${bigNumberOne.times(100).div(bigNumberTwo).
+            toString()}%`;
     default:
-        break;
+        return "0";
 
     }
-
-    return result;
 
 };
 
 export default operate;
-/* eslint-disable no-ternary */
-/* eslint-disable no-ternary */
+/* eslint-enable no-ternary */
+/* eslint-enable no-magic-numbers */
+/* eslint-enable max-len */

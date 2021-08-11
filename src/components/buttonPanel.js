@@ -1,143 +1,57 @@
-/* eslint-disable max-lines-per-function */
-/* eslint-disable max-lines-per-function */
 import Button from "./button";
 import PropTypes from "prop-types";
 import React from "react";
 
-export default function ButtonPanel (props) {
 
-    const handleClick = (name) => {
+export default function ButtonPanel ({clickHandler}) {
 
-        props.clickHandler(name);
+    const handleClick = (btnName) => clickHandler(btnName),
 
-    };
-
+        groups = [
+            [
+                "AC",
+                "+/-",
+                "%",
+                "÷"
+            ],
+            [
+                "7",
+                "8",
+                "9",
+                "X"
+            ],
+            [
+                "4",
+                "5",
+                "6",
+                "-"
+            ],
+            [
+                "1",
+                "2",
+                "3",
+                "+"
+            ],
+            [
+                "0",
+                ".",
+                "="
+            ]
+        ];
     return (
-        <div>
-
-            <div>
-
-                <Button
-                    clickHandler={handleClick(this)}
-                    name="AC"
-                />
-
-                <Button
-                    clickHandler={handleClick(this)}
-                    name="+/-"
-                />
-
-                <Button
-                    clickHandler={handleClick(this)}
-                    name="%"
-                />
-
-                <Button
-                    clickHandler={handleClick(this)}
-                    name="/"
-                />
-
-            </div>
-
-            <div>
-
-
-                <Button
-                    clickHandler={handleClick(this)}
-                    name="7"
-                />
-
-                <Button
-                    clickHandler={handleClick(this)}
-                    name="8"
-                />
-
-                <Button
-                    clickHandler={handleClick(this)}
-                    name="X"
-                />
-
-            </div>
-
-            <div>
-
-                <Button
-                    clickHandler={handleClick(this)}
-                    name="4"
-                />
-
-                <Button
-                    clickHandler={handleClick(this)(this)(this)}
-                    name="5"
-                />
-
-                <Button
-                    clickHandler={handleClick(this)(this)(this)}
-                    name="6"
-                />
-
-                <Button
-                    clickHandler={handleClick(this)(this)(this)}
-                    name="-"
-                />
-
-            </div>
-
-            <div>
-
-                <Button
-                    clickHandler={handleClick(this)(this)}
-                    name="1"
-                />
-
-                <Button
-                    clickHandler={handleClick(this)(this)}
-                    name="2"
-                />
-
-                <Button
-                    clickHandler={handleClick(this)(this)}
-                    name="3"
-                />
-
-                <Button
-                    clickHandler={handleClick(this)(this)}
-                    name="+"
-                />
-
-            </div>
-
-            <div>
-
-                <Button
-                    clickHandler={handleClick(this)}
-                    name="0"
-                />
-
-                <Button
-                    clickHandler={handleClick(this)}
-                    name="."
-                />
-
-                <Button
-                    clickHandler={handleClick(this)}
-                    name="="
-                />
-
-            </div>
-
+        <div className="button-panel">
+            {groups.map((group) => (<div key={`group-${groups.indexOf(group)}`}>
+                    {group.map((btnName) =>
+                        <Button
+                            btnName={btnName}
+                            clickHandler={handleClick}
+                            key={`btnName-${group.indexOf(btnName)}`}
+                    />)}
+            </div>))}
         </div>
-
     );
 
 }
 
-ButtonPanel.propTypes = {
-    "clickHandler": PropTypes.func
-};
+ButtonPanel.propTypes = {"clickHandler": PropTypes.func.isRequired};
 
-ButtonPanel.defaultProps = {
-    "clickHandler": 0
-};
-
-/* eslint-enable max-lines-per-function */

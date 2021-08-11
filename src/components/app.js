@@ -1,57 +1,46 @@
-/* eslint-disable sort-vars */
-/* eslint-disable react/jsx-no-bind */
-import React, {useState} from "react";
 import ButtonPanel from "./buttonPanel";
 import Display from "./display";
+import React from "react";
 import calculate from "../logic/calculate";
 
-export default function App () {
+export default class App extends React.Component {
 
-    const state = {
+    constructor (props) {
+
+        super(props);
+        this.state = {
+            "total": null,
             "next": null,
-            "operation": null,
-            "total": "0"
-        },
-
-        [
-            myState,
-            setMyState
-        ] = useState(state),
-
-        handleClick = (buttonName) => {
-
-            const result = calculate(
-                buttonName,
-                myState
-            );
-            setMyState(result);
-
-        },
-
-        resultHander = (total, next) => {
-
-            if (next) {
-
-                return next;
-
-            }
-            return total;
-
+            "operation": null
         };
+        this.handleClick = this.handleClick.bind(this);
 
-    return (
-        <div>
-            <Display result={resultHander(
-                myState.total,
-                myState.next
-            )}
-            />
+    }
 
-            <ButtonPanel clickHandler={handleClick} />
-        </div>
-    );
+    handleClick (btnName) {
+
+        const calculator = calculate(
+            this.state,
+            btnName
+        );
+        this.setState({...calculator});
+
+    }
+
+    render () {
+
+        const {next, total} = this.state,
+            result = next
+                ? next && next.toString()
+                : total && total.toString();
+        return (
+            <div>
+                <Display result={result || "0"} />
+
+                <ButtonPanel clickHandler={this.handleClick} />
+            </div>
+        );
+
+    }
 
 }
-/* eslint-enable sort-vars */
-/* eslint-enable react/jsx-no-bind */
-
