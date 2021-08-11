@@ -1,57 +1,34 @@
-import Button from "./button";
-import PropTypes from "prop-types";
-import React from "react";
+import PropTypes from 'prop-types';
+import Button from './button';
+import React from 'react';
 
+const ButtonPanel = ({ clickHandler }) => {
+  const handleClick = (btnName) => clickHandler(btnName);
 
-export default function ButtonPanel ({clickHandler}) {
-
-    const handleClick = (btnName) => clickHandler(btnName),
-
-        groups = [
-            [
-                "AC",
-                "+/-",
-                "%",
-                "÷"
-            ],
-            [
-                "7",
-                "8",
-                "9",
-                "X"
-            ],
-            [
-                "4",
-                "5",
-                "6",
-                "-"
-            ],
-            [
-                "1",
-                "2",
-                "3",
-                "+"
-            ],
-            [
-                "0",
-                ".",
-                "="
-            ]
-        ];
-    return (
-        <div className="button-panel">
-            {groups.map((group) => (<div key={`group-${groups.indexOf(group)}`}>
-                    {group.map((btnName) =>
-                        <Button
-                            btnName={btnName}
-                            clickHandler={handleClick}
-                            key={`btnName-${group.indexOf(btnName)}`}
-                    />)}
-            </div>))}
+  const groups = [
+    ['AC', '+/-', '%', '÷'],
+    ['7', '8', '9', 'X'],
+    ['4', '5', '6', '-'],
+    ['1', '2', '3', '+'],
+    ['0', '.', '='],
+  ];
+  return (
+    <div className="button-panel">
+      {groups.map((group) => (
+        <div key={`group-${groups.indexOf(group)}`}>
+          {group.map((btnName) => (
+            <Button
+              key={`btnName-${group.indexOf(btnName)}`}
+              btnName={btnName}
+              clickHandler={handleClick}
+            />
+          ))}
         </div>
-    );
+      ))}
+    </div>
+  );
+};
 
-}
+ButtonPanel.propTypes = { clickHandler: PropTypes.func.isRequired };
 
-ButtonPanel.propTypes = {"clickHandler": PropTypes.func.isRequired};
-
+export default ButtonPanel;

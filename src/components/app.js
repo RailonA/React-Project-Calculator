@@ -1,46 +1,32 @@
-import ButtonPanel from "./buttonPanel";
-import Display from "./display";
-import React from "react";
-import calculate from "../logic/calculate";
+import React from 'react';
+import Display from './display';
+import ButtonPanel from './buttonPanel';
+import calculate from '../logic/calculate'; // eslint-disable-line no-unused-vars
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      total: null,
+      next: null,
+      operation: null,
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-    constructor (props) {
+  handleClick(btnName) {
+    const calculator = calculate(this.state, btnName);
+    this.setState({ ...calculator });
+  }
 
-        super(props);
-        this.state = {
-            "total": null,
-            "next": null,
-            "operation": null
-        };
-        this.handleClick = this.handleClick.bind(this);
-
-    }
-
-    handleClick (btnName) {
-
-        const calculator = calculate(
-            this.state,
-            btnName
-        );
-        this.setState({...calculator});
-
-    }
-
-    render () {
-
-        const {next, total} = this.state,
-            result = next
-                ? next && next.toString()
-                : total && total.toString();
-        return (
-            <div>
-                <Display result={result || "0"} />
-
-                <ButtonPanel clickHandler={this.handleClick} />
-            </div>
-        );
-
-    }
-
+  render() {
+    const { next, total } = this.state;
+    const result = next ? next && next.toString() : total && total.toString();
+    return (
+      <div>
+        <Display result={result || '0'} />
+        <ButtonPanel clickHandler={this.handleClick} />
+      </div>
+    );
+  }
 }
