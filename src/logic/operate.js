@@ -1,8 +1,12 @@
 import Big from 'big.js';
 
 const operate = (numberOne, numberTwo, operation) => {
-  const bigNumberOne = numberOne ? new Big(numberOne) : null;
-  const bigNumberTwo = numberTwo ? new Big(numberTwo) : null;
+  const bigNumberOne = numberOne
+    ? new Big(numberOne)
+    : null;
+  const bigNumberTwo = numberTwo
+    ? new Big(numberTwo)
+    : null;
 
   switch (operation) {
     case '+':
@@ -21,7 +25,8 @@ const operate = (numberOne, numberTwo, operation) => {
         return 'Error, division by 0';
       }
     case '%':
-      return `${bigNumberOne.times(100).div(bigNumberTwo).toString()}%`;
+      return `${bigNumberOne.times(100).div(bigNumberTwo)
+        .toString()}%`;
     default:
       return '0';
   }

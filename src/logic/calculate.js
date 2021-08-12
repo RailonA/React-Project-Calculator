@@ -5,7 +5,13 @@ const calculate = (data = {}, btnName) => {
   const numbers = Array(10)
     .fill(null)
     .map((n, i) => i.toString());
-  const operators = ['+', '-', 'X', '÷', '%'];
+  const operators = [
+    '+',
+    '-',
+    'X',
+    '÷',
+    '%',
+  ];
 
   if (btnName === '+/-') {
     return {
@@ -39,7 +45,11 @@ const calculate = (data = {}, btnName) => {
 
   if (operators.includes(btnName)) {
     while (next !== null && operation !== null) {
-      total = operate(total, next, operation);
+      total = operate(
+        total,
+        next,
+        operation,
+      );
       operation = btnName;
       next = null;
       operation = null;
@@ -62,13 +72,21 @@ const calculate = (data = {}, btnName) => {
       total = 0;
     }
     if (total && next && operation) {
-      total = operate(total, next, operation);
+      total = operate(
+        total,
+        next,
+        operation,
+      );
       next = null;
       operation = null;
     }
   }
 
-  return { total, next, operation };
+  return {
+    total,
+    next,
+    operation,
+  };
 };
 
 export default calculate;

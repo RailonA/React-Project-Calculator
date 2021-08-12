@@ -15,16 +15,22 @@ export default class App extends React.Component {
   }
 
   handleClick(btnName) {
-    const calculator = calculate(this.state, btnName);
+    const calculator = calculate(
+      this.state,
+      btnName,
+    );
     this.setState({ ...calculator });
   }
 
   render() {
     const { next, total } = this.state;
-    const result = next ? next && next.toString() : total && total.toString();
+    const result = next
+      ? next && next.toString()
+      : total && total.toString();
     return (
       <div>
         <Display result={result || '0'} />
+
         <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );
