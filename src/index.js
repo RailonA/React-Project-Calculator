@@ -2,7 +2,7 @@
 /* eslint-disable sort-imports */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.sass';
+import './index.css';
 import App from './components/app';
 
 ReactDOM.render(
