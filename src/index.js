@@ -3,11 +3,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/app';
+import Calculator from './pages/calculator';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Calculator />
   </React.StrictMode>,
   document.getElementById('root'),
 );
