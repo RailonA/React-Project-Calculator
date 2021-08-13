@@ -1,59 +1,35 @@
-/* eslint-disable no-magic-numbers */
-/* eslint-disable no-ternary */
+import Big from 'big.js';
 
-import Big from "big.js";
+const operate = (numberOne, numberTwo, operation) => {
+  const bigNumberOne = numberOne
+    ? new Big(numberOne)
+    : null;
+  const bigNumberTwo = numberTwo
+    ? new Big(numberTwo)
+    : null;
 
-const operate = (firstnumber, secondNumber, operation) => {
-
-    const numberOne = new Big(firstnumber),
-        numberTwo = new Big(secondNumber);
-    let result = 0;
-
-    switch (operation) {
-
-    case "+":
-        result = numberOne.plus(numberTwo);
-        break;
-
-    case "-":
-        result = numberOne.minus(numberTwo);
-        break;
-
-    case "x":
-        result = numberOne.times(numberTwo);
-        break;
-
-    case "%":
-        result = numberOne.mod(numberTwo);
-        break;
-
-    case "/":
-        result = numberOne.div(numberTwo);
-        break;
-
-    case "+/-":
-        result = secondNumber
-            ? numberTwo * -1
-            : numberOne * -1;
-        break;
-
-    case "AC":
-        result = 0;
-        break;
-
-    case ".":
-        result = 0.0;
-        break;
-
+  switch (operation) {
+    case '+':
+      return bigNumberOne.plus(bigNumberTwo).toString();
+    case '-':
+      return bigNumberOne.minus(bigNumberTwo).toString();
+    case 'X':
+      return bigNumberOne.times(bigNumberTwo).toString();
+    case '÷':
+      try {
+        bigNumberOne.div(bigNumberTwo);
+        return (
+          Math.round(bigNumberOne.div(bigNumberTwo) * 1000000.0) / 1000000.0
+        ).toString();
+      } catch (err) {
+        return 'Error, division by 0';
+      }
+    case '%':
+      return `${bigNumberOne.times(100).div(bigNumberTwo)
+        .toString()}`;
     default:
-        break;
-
-    }
-
-    return result;
-
+      return '0';
+  }
 };
 
 export default operate;
-/* eslint-disable no-ternary */
-/* eslint-disable no-ternary */

@@ -1,75 +1,58 @@
-/* eslint-disable max-lines-per-function */
-import Button from "./button";
-import React from "react";
+import PropTypes from 'prop-types';
+import React from 'react';
+import Button from './button';
 
-export default function ButtonPanel () {
+function ButtonPanel({ clickHandler }) {
+  const handleClick = (btnName) => clickHandler(btnName);
 
-    return (
-        <div>
-
-            <div>
-
-                <Button name="AC" />
-
-                <Button name="+/-" />
-
-                <Button name="%" />
-
-                <Button name="/" />
-
-            </div>
-
-            <div>
-
-
-                <Button name="7" />
-
-                <Button name="8" />
-
-                <Button name="9" />
-
-                <Button name="X" />
-
-            </div>
-
-            <div>
-
-                <Button name="4" />
-
-                <Button name="5" />
-
-                <Button name="6" />
-
-                <Button name="-" />
-
-            </div>
-
-            <div>
-
-                <Button name="1" />
-
-                <Button name="2" />
-
-                <Button name="3" />
-
-                <Button name="+" />
-
-            </div>
-
-            <div>
-
-                <Button name="0" />
-
-                <Button name="." />
-
-                <Button name="=" />
-
-            </div>
-
+  const groups = [
+    [
+      'AC',
+      '+/-',
+      '%',
+      '÷',
+    ],
+    [
+      '7',
+      '8',
+      '9',
+      'X',
+    ],
+    [
+      '4',
+      '5',
+      '6',
+      '-',
+    ],
+    [
+      '1',
+      '2',
+      '3',
+      '+',
+    ],
+    [
+      '0',
+      '.',
+      '=',
+    ],
+  ];
+  return (
+    <div className="button-panel">
+      {groups.map((group) => (
+        <div key={`group-${groups.indexOf(group)}`}>
+          {group.map((btnName) => (
+            <Button
+              key={`btnName-${group.indexOf(btnName)}`}
+              btnName={btnName}
+              clickHandler={handleClick}
+            />
+          ))}
         </div>
-
-    );
-
+      ))}
+    </div>
+  );
 }
 
-/* eslint-enable max-lines-per-function */
+ButtonPanel.propTypes = { clickHandler: PropTypes.func.isRequired };
+
+export default ButtonPanel;
