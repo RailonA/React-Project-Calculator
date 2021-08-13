@@ -42,7 +42,14 @@ nav {
 }
 
 .mainAppDiv {
+  margin-top: 50px;
+  background-color: rgb(46, 46, 46);
+  border-radius: 10px;
   padding: 20px;
+  box-shadow:
+    0 8px 10px 0 rgba(0, 0, 0, 0.3),
+    inset 0 4px 1px 1px white,
+    inset 0 -3px 1px 1px rgba(204, 198, 197, 0.5);
 }
 
 .button {
