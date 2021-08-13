@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Nav() {
+function Header() {
   const navStyle = {
     color: 'white',
+    padding: '5px',
   };
 
   return (
@@ -24,4 +25,4 @@ function Nav() {
   );
 }
 
-export default Nav;
+export default Header;
