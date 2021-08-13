@@ -26,7 +26,7 @@ const operate = (numberOne, numberTwo, operation) => {
       }
     case '%':
       return `${bigNumberOne.times(100).div(bigNumberTwo)
-        .toString()}%`;
+        .toString()}`;
     default:
       return '0';
   }
