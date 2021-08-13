@@ -9,16 +9,16 @@ function Header() {
 
   return (
     <nav>
-      <h3>Logo</h3>
+      <h3 className="headerLogo">Math Magicians</h3>
       <ul className="nav-link">
         <Link style={navStyle} to="/home">
-          <li>Home</li>
+          <li className="linkText">Home</li>
         </Link>
         <Link style={navStyle} to="/calculator">
-          <li>Calculator</li>
+          <li className="linkText">Calculator</li>
         </Link>
         <Link style={navStyle} to="/quote">
-          <li>Quote</li>
+          <li className="linkText">Quote</li>
         </Link>
       </ul>
     </nav>
