@@ -1,0 +1,143 @@
+0 verbose cli [
+0 verbose cli   '/home/railon/.nvm/versions/node/v16.6.1/bin/node',
+0 verbose cli   '/home/railon/.nvm/versions/node/v16.6.1/bin/npm',
+0 verbose cli   'install'
+0 verbose cli ]
+1 info using npm@7.20.5
+2 info using node@v16.6.1
+3 timing npm:load:whichnode Completed in 0ms
+4 timing config:load:defaults Completed in 1ms
+5 timing config:load:file:/home/railon/.nvm/versions/node/v16.6.1/lib/node_modules/npm/npmrc Completed in 1ms
+6 timing config:load:builtin Completed in 1ms
+7 timing config:load:cli Completed in 2ms
+8 timing config:load:env Completed in 0ms
+9 timing config:load:file:/home/railon/Projects/JavaScript/React/react-project-calculator/.npmrc Completed in 0ms
+10 timing config:load:project Completed in 1ms
+11 timing config:load:file:/home/railon/.npmrc Completed in 1ms
+12 timing config:load:user Completed in 1ms
+13 timing config:load:file:/home/railon/.nvm/versions/node/v16.6.1/etc/npmrc Completed in 0ms
+14 timing config:load:global Completed in 0ms
+15 timing config:load:validate Completed in 1ms
+16 timing config:load:credentials Completed in 1ms
+17 timing config:load:setEnvs Completed in 1ms
+18 timing config:load Completed in 9ms
+19 timing npm:load:configload Completed in 10ms
+20 timing npm:load:setTitle Completed in 0ms
+21 timing npm:load:setupLog Completed in 0ms
+22 timing config:load:flatten Completed in 2ms
+23 timing npm:load:cleanupLog Completed in 2ms
+24 timing npm:load:configScope Completed in 0ms
+25 timing npm:load:projectScope Completed in 1ms
+26 timing npm:load Completed in 17ms
+27 timing arborist:ctor Completed in 2ms
+28 timing arborist:ctor Completed in 0ms
+29 timing idealTree:init Completed in 13ms
+30 timing idealTree:userRequests Completed in 0ms
+31 silly idealTree buildDeps
+32 silly fetch manifest @material-ui/core@^4.12.1
+33 http fetch GET 200 https://registry.npmjs.org/@material-ui%2fcore 21ms (cache hit)
+34 silly fetch manifest @types/react@^16.8.6 || ^17.0.0
+35 http fetch GET 200 https://registry.npmjs.org/@types%2freact 8ms (cache hit)
+36 silly fetch manifest react@^17.0.2
+37 http fetch GET 200 https://registry.npmjs.org/react 7ms (cache hit)
+38 silly fetch manifest react-dom@^17.0.2
+39 http fetch GET 200 https://registry.npmjs.org/react-dom 9ms (cache hit)
+40 silly fetch manifest @material-ui/icons@^4.11.2
+41 http fetch GET 200 https://registry.npmjs.org/@material-ui%2ficons 4ms (cache hit)
+42 silly fetch manifest @material-ui/system@^4.11.3
+43 http fetch GET 200 https://registry.npmjs.org/@material-ui%2fsystem 8ms (cache hit)
+44 silly fetch manifest @testing-library/jest-dom@^5.14.1
+45 http fetch GET 200 https://registry.npmjs.org/@testing-library%2fjest-dom 9ms (cache hit)
+46 silly fetch manifest @testing-library/react@^11.2.7
+47 http fetch GET 200 https://registry.npmjs.org/@testing-library%2freact 4ms (cache hit)
+48 silly fetch manifest @testing-library/user-event@^12.1.10
+49 http fetch GET 200 https://registry.npmjs.org/@testing-library%2fuser-event 6ms (cache hit)
+50 silly fetch manifest @testing-library/dom@>=7.21.4
+51 http fetch GET 200 https://registry.npmjs.org/@testing-library%2fdom 4ms (cache hit)
+52 silly fetch manifest @wojtekmaj/enzyme-adapter-react-17@^0.6.2
+53 http fetch GET 200 https://registry.npmjs.org/@wojtekmaj%2fenzyme-adapter-react-17 9ms (cache hit)
+54 silly fetch manifest enzyme@^3.11.0
+55 http fetch GET 200 https://registry.npmjs.org/enzyme 5ms (cache hit)
+56 silly fetch manifest babel-eslint@^10.1.0
+57 http fetch GET 200 https://registry.npmjs.org/babel-eslint 4ms (cache hit)
+58 silly fetch manifest eslint@^7.32.0
+59 http fetch GET 200 https://registry.npmjs.org/eslint 5ms (cache hit)
+60 silly fetch manifest babel-preset-stage-0@^6.24.1
+61 http fetch GET 200 https://registry.npmjs.org/babel-preset-stage-0 4ms (cache hit)
+62 silly fetch manifest big.js@^5.2.2
+63 http fetch GET 200 https://registry.npmjs.org/big.js 4ms (cache hit)
+64 silly fetch manifest bootstrap@^5.0.2
+65 http fetch GET 200 https://registry.npmjs.org/bootstrap 5ms (cache hit)
+66 silly fetch manifest @popperjs/core@^2.9.3
+67 http fetch GET 200 https://registry.npmjs.org/@popperjs%2fcore 9ms (cache hit)
+68 silly fetch manifest eslint-config-airbnb-base@^14.2.1
+69 http fetch GET 200 https://registry.npmjs.org/eslint-config-airbnb-base 5ms (cache hit)
+70 silly fetch manifest eslint-plugin-import@^2.24.0
+71 http fetch GET 200 https://registry.npmjs.org/eslint-plugin-import 4ms (cache hit)
+72 silly fetch manifest prop-types@^15.7.2
+73 http fetch GET 200 https://registry.npmjs.org/prop-types 3ms (cache hit)
+74 silly fetch manifest react-router-dom@^5.2.0
+75 http fetch GET 200 https://registry.npmjs.org/react-router-dom 3ms (cache hit)
+76 silly fetch manifest react-scripts@^4.0.3
+77 http fetch GET 200 https://registry.npmjs.org/react-scripts 4ms (cache hit)
+78 silly fetch manifest typescript@^3.2.1 || ^4
+79 http fetch GET 200 https://registry.npmjs.org/typescript 24ms (cache hit)
+80 silly fetch manifest sinon@^11.1.1
+81 http fetch GET 200 https://registry.npmjs.org/sinon 7ms (cache hit)
+82 silly fetch manifest web-vitals@^1.0.1
+83 http fetch GET 200 https://registry.npmjs.org/web-vitals 5ms (cache hit)
+84 silly fetch manifest @babel/cli@^7.14.8
+85 http fetch GET 200 https://registry.npmjs.org/@babel%2fcli 8ms (cache hit)
+86 silly fetch manifest @babel/core@^7.15.0
+87 http fetch GET 200 https://registry.npmjs.org/@babel%2fcore 8ms (cache hit)
+88 silly fetch manifest @babel/eslint-parser@^7.15.0
+89 http fetch GET 200 https://registry.npmjs.org/@babel%2feslint-parser 6ms (cache hit)
+90 silly fetch manifest @babel/node@^7.14.9
+91 http fetch GET 200 https://registry.npmjs.org/@babel%2fnode 7ms (cache hit)
+92 silly fetch manifest @babel/plugin-syntax-jsx@^7.14.5
+93 http fetch GET 200 https://registry.npmjs.org/@babel%2fplugin-syntax-jsx 6ms (cache hit)
+94 silly fetch manifest @babel/polyfill@^7.12.1
+95 http fetch GET 200 https://registry.npmjs.org/@babel%2fpolyfill 15ms (cache hit)
+96 silly fetch manifest @babel/preset-env@^7.15.0
+97 http fetch GET 200 https://registry.npmjs.org/@babel%2fpreset-env 6ms (cache hit)
+98 silly fetch manifest @babel/preset-react@^7.14.5
+99 http fetch GET 200 https://registry.npmjs.org/@babel%2fpreset-react 3ms (cache hit)
+100 silly fetch manifest babel-jest@^27.0.6
+101 http fetch GET 200 https://registry.npmjs.org/babel-jest 4ms (cache hit)
+102 silly fetch manifest enzyme-adapter-react-16@^1.15.6
+103 http fetch GET 200 https://registry.npmjs.org/enzyme-adapter-react-16 7ms (cache hit)
+104 silly fetch manifest react@^16.0.0-0
+105 timing idealTree Completed in 519ms
+106 timing command:install Completed in 555ms
+107 verbose stack Error: unable to resolve dependency tree
+107 verbose stack     at Arborist.[failPeerConflict] (/home/railon/.nvm/versions/node/v16.6.1/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/build-ideal-tree.js:1266:25)
+107 verbose stack     at Arborist.[loadPeerSet] (/home/railon/.nvm/versions/node/v16.6.1/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/build-ideal-tree.js:1233:34)
+107 verbose stack     at async Arborist.[buildDepStep] (/home/railon/.nvm/versions/node/v16.6.1/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/build-ideal-tree.js:867:11)
+107 verbose stack     at async Arborist.buildIdealTree (/home/railon/.nvm/versions/node/v16.6.1/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/build-ideal-tree.js:203:7)
+107 verbose stack     at async Promise.all (index 1)
+107 verbose stack     at async Arborist.reify (/home/railon/.nvm/versions/node/v16.6.1/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/reify.js:141:5)
+107 verbose stack     at async Install.install (/home/railon/.nvm/versions/node/v16.6.1/lib/node_modules/npm/lib/install.js:150:5)
+108 verbose cwd /home/railon/Projects/JavaScript/React/react-project-calculator
+109 verbose Linux 5.11.0-25-generic
+110 verbose argv "/home/railon/.nvm/versions/node/v16.6.1/bin/node" "/home/railon/.nvm/versions/node/v16.6.1/bin/npm" "install"
+111 verbose node v16.6.1
+112 verbose npm  v7.20.5
+113 error code ERESOLVE
+114 error ERESOLVE unable to resolve dependency tree
+115 error
+116 error While resolving: [1mreact-calculator[22m@[1m0.1.0[22m
+116 error Found: [1mreact[22m@[1m17.0.2[22m[2m[22m
+116 error [2mnode_modules/react[22m
+116 error   [1mreact[22m@"[1m^17.0.2[22m" from the root project
+116 error
+116 error Could not resolve dependency:
+116 error [35mpeer[39m [1mreact[22m@"[1m^16.0.0-0[22m" from [1menzyme-adapter-react-16[22m@[1m1.15.6[22m[2m[22m
+116 error [2mnode_modules/enzyme-adapter-react-16[22m
+116 error   [33mdev[39m [1menzyme-adapter-react-16[22m@"[1m^1.15.6[22m" from the root project
+116 error
+116 error Fix the upstream dependency conflict, or retry
+116 error this command with --force, or --legacy-peer-deps
+116 error to accept an incorrect (and potentially broken) dependency resolution.
+116 error
+116 error See /home/railon/Projects/JavaScript/React/react-project-calculator/C:tmpnodejsnpm-cache/eresolve-report.txt for a full report.
+117 verbose exit 1
