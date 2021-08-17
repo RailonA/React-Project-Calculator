@@ -1,6 +1,6 @@
 # npm resolution error report
 
-2021-08-17T15:27:39.436Z
+2021-08-17T15:52:54.661Z
 
 While resolving: react-calculator@0.1.0
 Found: react@17.0.2
