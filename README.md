@@ -18,6 +18,8 @@ Additional description about the project and its features.
 
 [Live Demo Link](https://react-project-calculator.herokuapp.com/)
 
+![screenshot](./src/assets/calc-screenshot.png)
+
 ## Getting Started
 
 In order to run locally this project type the following commands over the terminal in Linux or Mac or the Windows cmd console:
