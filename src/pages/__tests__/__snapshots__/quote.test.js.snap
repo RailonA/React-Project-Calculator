@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quote page should match the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="qouteDiv"
+  >
+    <div>
+      <p>
+        Pure mathematics is, in its way, the poetry of logical ideas.
+      </p>
+      <p
+        class="qouteDiv-p"
+      >
+        — Albert Einstein, German theoretical physicist
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
