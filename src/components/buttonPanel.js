@@ -5,50 +5,37 @@ import Button from './button';
 function ButtonPanel({ clickHandler }) {
   const handleClick = (btnName) => clickHandler(btnName);
 
-  const groups = [
-    [
-      'AC',
-      '+/-',
-      '%',
-      '÷',
-    ],
-    [
-      '7',
-      '8',
-      '9',
-      'X',
-    ],
-    [
-      '4',
-      '5',
-      '6',
-      '-',
-    ],
-    [
-      '1',
-      '2',
-      '3',
-      '+',
-    ],
-    [
-      '0',
-      '.',
-      '=',
-    ],
-  ];
   return (
-    <div className="button-panel">
-      {groups.map((group) => (
-        <div key={`group-${groups.indexOf(group)}`}>
-          {group.map((btnName) => (
-            <Button
-              key={`btnName-${group.indexOf(btnName)}`}
-              btnName={btnName}
-              clickHandler={handleClick}
-            />
-          ))}
-        </div>
-      ))}
+    <div>
+      <div>
+        <Button name="AC" color="button" clickHandler={handleClick} />
+        <Button name="+/-" color="button" clickHandler={handleClick} />
+        <Button name="%" color="button" clickHandler={handleClick} />
+        <Button name="÷" clickHandler={handleClick} />
+      </div>
+      <div>
+        <Button name="7" color="button" clickHandler={handleClick} />
+        <Button name="8" color="button" clickHandler={handleClick} />
+        <Button name="9" color="button" clickHandler={handleClick} />
+        <Button name="X" clickHandler={handleClick} />
+      </div>
+      <div>
+        <Button name="4" color="button" clickHandler={handleClick} />
+        <Button name="5" color="button" clickHandler={handleClick} />
+        <Button name="6" color="button" clickHandler={handleClick} />
+        <Button name="−" clickHandler={handleClick} />
+      </div>
+      <div>
+        <Button name="1" color="button" clickHandler={handleClick} />
+        <Button name="2" color="button" clickHandler={handleClick} />
+        <Button name="3" color="button" clickHandler={handleClick} />
+        <Button name="+" clickHandler={handleClick} />
+      </div>
+      <div>
+        <Button name="0" wide color="button" clickHandler={handleClick} />
+        <Button name="." color="button" clickHandler={handleClick} />
+        <Button name="=" clickHandler={handleClick} />
+      </div>
     </div>
   );
 }

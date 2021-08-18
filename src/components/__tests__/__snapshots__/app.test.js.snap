@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders home link correctly 1`] = `
+<button
+  type="button"
+>
+  AC
+</button>
+`;
+
+exports[`renders home link correctly 2`] = `
+<button
+  type="button"
+>
+  %
+</button>
+`;
+
+exports[`renders home link correctly 3`] = `
+<button
+  type="button"
+>
+  +/-
+</button>
+`;
+
+exports[`renders home link correctly 4`] = `
+<button
+  type="button"
+>
+  -
+</button>
+`;
+
+exports[`renders home link correctly 5`] = `
+<button
+  type="button"
+>
+  1
+</button>
+`;
+
+exports[`renders home link correctly 6`] = `
+<button
+  type="button"
+>
+  2
+</button>
+`;
+
+exports[`renders home link correctly 7`] = `
+<button
+  type="button"
+>
+  3
+</button>
+`;
+
+exports[`renders home link correctly 8`] = `
+<button
+  type="button"
+>
+  4
+</button>
+`;
+
+exports[`renders home link correctly 9`] = `
+<button
+  type="button"
+>
+  5
+</button>
+`;
+
+exports[`renders home link correctly 10`] = `
+<button
+  type="button"
+>
+  6
+</button>
+`;
+
+exports[`renders home link correctly 11`] = `
+<button
+  type="button"
+>
+  7
+</button>
+`;
+
+exports[`renders home link correctly 12`] = `
+<button
+  type="button"
+>
+  8
+</button>
+`;
+
+exports[`renders home link correctly 13`] = `
+<button
+  type="button"
+>
+  9
+</button>
+`;
+
+exports[`renders home link correctly 14`] = `
+<button
+  type="button"
+>
+  0
+</button>
+`;
